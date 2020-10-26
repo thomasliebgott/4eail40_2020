@@ -1,14 +1,11 @@
 package main
 
 import (
-	"board"
 	"bufio"
 	"fmt"
 	"os"
 	"strings"
 )
-
-type BoardLive [8][8]int
 
 func main() {
 	reader := bufio.NewReader(os.Stdin)
@@ -31,13 +28,12 @@ func runCommand(commandStr string) (e error) {
 	switch args[0] {
 	case "exit":
 		os.Exit(0)
-
 	// add another case here for custom commands.
 	case "new":
-		boardlive := board.NewTray()
-
+		// TODO Create a new game on a classic 8x8 board.
 		// TODO Display the board on console.
 		break
+
 	case "move":
 		// TODO Move a piece. (syntax: move <from> <to>)
 		// TODO The command line should be in the form of move A2 A4.

@@ -3,7 +3,6 @@ package board
 
 import (
 	"fmt"
-
 	"github.com/jglouis/4eail40_2020/exercises/chess/model/coord"
 	"github.com/jglouis/4eail40_2020/exercises/chess/model/piece"
 )

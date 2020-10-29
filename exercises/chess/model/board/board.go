@@ -19,7 +19,12 @@ func (c *Classic) String() string {
 // PieceAt retrievves piece at give coordinates.
 // Returns nil if no piece was found.
 func (c *Classic) PieceAt(at coord.ChessCoordinates) piece.Piece {
-	panic("not implemented") // TODO: Implement
+	for i := 0; i < len(Classic); i++{
+		for j := 0; j < len(Classic); j++{
+			if Classic[i][j] == coord.ChessCoordinates {
+				return (" la piece est la " i , j)
+			}
+		}
 }
 
 // MovePiece moves a piece from given coordinates to

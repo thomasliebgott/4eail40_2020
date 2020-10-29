@@ -2,6 +2,7 @@ package board
 
 import (
 	"testing"
+
 	"github.com/jglouis/4eail40_2020/exercises/chess/model/coord"
 )
 
@@ -16,6 +17,7 @@ func (c mockCoord) String() string {
 	return "1"
 }
 
+//tentative de codage de la fonction MovePiece
 func TestClassic_MovePiece(t *testing.T) {
 	type args struct {
 		from coord.ChessCoordinates
@@ -34,6 +36,7 @@ func TestClassic_MovePiece(t *testing.T) {
 			true,
 		},
 	}
+
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if err := tt.c.MovePiece(tt.args.from, tt.args.to); (err != nil) != tt.wantErr {

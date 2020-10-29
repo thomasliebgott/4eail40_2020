@@ -11,14 +11,16 @@ func TestNewCartesian(t *testing.T) {
 	}
 }
 
+// pas reussi a avoir pass ducoup j'ai commenté ce que j'ai compris ce que faisait le code
 func TestCartesian_Coord(t *testing.T) {
-	c := NewCartesian(1, 2)
+	c := NewCartesian(1, 2) // création du constructeur Cartesian qui nous permet d'avoir les coords d'une piece en pos x= 1 et y=2
 
-	tests := map[int]int{
+	tests := map[int]int{ // instance d'une map avec les valeurs que l'on coord qu'on veut tester qui sont les meme que c
 		0: 1,
 		1: 2,
 	}
 
+	// va comparer want et tests pour savoir si on a bien les coord attendu
 	for n, want := range tests {
 		t.Run(string(rune(n)), func(t *testing.T) {
 			got, err := c.Coord(n)

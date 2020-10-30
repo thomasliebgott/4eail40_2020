@@ -17,7 +17,6 @@ func (c mockCoord) String() string {
 	return "1"
 }
 
-//tentative de codage de la fonction MovePiece
 func TestClassic_MovePiece(t *testing.T) {
 	type args struct {
 		from coord.ChessCoordinates

@@ -2,54 +2,46 @@ package board
 
 import (
 	"fmt"
+
 	"github.com/jglouis/4eail40_2020/exercises/chess/model/coord"
 	"github.com/jglouis/4eail40_2020/exercises/chess/model/piece"
 )
 
-
-// Classic 8x8 Chess board 
+// Classic 8x8 Chess board
 type Classic [8][8]piece.Piece
 
-// tentative d'affichage du tableau de jeu 
+// tentative d'affichage du tableau de jeu
 func (c *Classic) String() string {
-	for i := 0; i < len(Classic); i++{
-		for j := 0; j < len(Classic); j++{
-			fmt.Println("|" Classic[i][j] "|")
-	}
+	panic("not implemented") // TODO: Implement
 }
 
-// tentative de determination de la type de piece a un endroit néccessaire pour le mouvement de la piece 
+// tentative de determination de la type de piece a un endroit néccessaire pour le mouvement de la piece
 // PieceAt retrievves piece at give coordinates.
 // Returns nil if no piece was found.
 func (c *Classic) PieceAt(at coord.ChessCoordinates) piece.Piece {
-	for i := 0; i < len(Classic); i++{
-		for j := 0; j < len(Classic); j++{
-			if Classic[i][j] == coord.ChessCoordinates {
-				return (" la piece est la " i , j)
-			}
-			else {
-				return nil
-			}
-		}
+	x, _ := at.Coord(0)
+	y, _ := at.Coord(1)
+	tab := c[x][y]
+	if tab != nil {
+		return tab
+	} else {
+		return nil
+	}
 }
 
 // MovePiece moves a piece from given coordinates to
 // given coordinates.
 // Returns an error if destination was occupied.
 func (c *Classic) MovePiece(from coord.ChessCoordinates, to coord.ChessCoordinates) error {
-	//tentative de determination des coordonées de départ 
-	depart := map[int]int{
-		map = PieceAt(from)[0] , PieceAt(from)[1]
-	}
 
-	//tentative détermination des coordonées d'arrivé 
-	arrive := map[int]int{
-		map = PieceAt(to)[0] , PieceAt(to)[1]
+	if c.PieceAt(from) != nil {
+		x, _ := from.Coord(0)
+		y, _ := from.Coord(1)
+		pos := c[x][y]
+		return c.PlacePieceAt(pos, to)
+	} else {
+		return fmt.Errorf("pas de piece a l'emplacement %v", from.String())
 	}
-	
-	depart[0][1] = arrive[0][1]
-	depart[0][0] = [0][0]
-	return fmt.Println("done")
 
 }
 

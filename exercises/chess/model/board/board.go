@@ -13,6 +13,7 @@ type Classic [8][8]piece.Piece
 // tentative d'affichage du tableau de jeu
 func (c *Classic) String() string {
 	panic("not implemented") // TODO: Implement
+	}
 }
 
 // tentative de determination de la type de piece a un endroit néccessaire pour le mouvement de la piece

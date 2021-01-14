@@ -5,15 +5,6 @@ import (
 	"math"
 )
 
-type Rectangle struct {
-	longueur float64
-	largeur  float64
-}
-
-type Cercle struct {
-	rayon float64
-}
-
 type Shape interface {
 	Area() float64
 }
